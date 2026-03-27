@@ -1,0 +1,2 @@
+- Nếu chọn “Cancel”: chương trình hiện tại sẽ coi như chọn No (vì chỉ kiểm tra YES_OPTION).
+- Tùy chỉnh lựa chọn: dùng JOptionPane.showOptionDialog và truyền vào mảng các chuỗi (ví dụ: {"I do", "I don't"} hoặc chỉ "Yes" và "No"). Giá trị trả về là chỉ số của lựa chọn trong mảng.
