@@ -1,0 +1,1 @@
+Java cho phép thông qua cơ chế constructor overloading => Có thể tạo nhiều constructor với các tham số khác nhau.
