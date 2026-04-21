@@ -1,0 +1,27 @@
+16/
+1. Ưu điểm của đa hình
+- Cho phép cùng một phương thức (toString(), play(), …) hoạt động khác nhau tùy theo đối tượng cụ thể.
+- Giúp code ngắn gọn, dễ bảo trì vì không cần viết nhiều câu lệnh if/else để phân biệt loại đối tượng.
+- Tăng khả năng mở rộng: khi thêm lớp mới, chỉ cần override phương thức, không phải sửa code cũ.
+- Tạo sự linh hoạt trong việc xử lý tập hợp các đối tượng khác nhau thông qua cùng một interface hoặc lớp cha.
+2. Vai trò của kế thừa để đạt đa hình
+- Inheritance cho phép các lớp con kế thừa phương thức từ lớp cha và override lại theo cách riêng.
+- Nhờ kế thừa, ta có thể lưu trữ nhiều loại đối tượng khác nhau trong cùng một danh sách kiểu lớp cha (List<Media>).
+- Khi gọi phương thức trên lớp cha, Java sẽ tự động chọn phiên bản override của lớp con tại runtime → chính là đa hình.
+3.Khác biệt giữa đa hình và kế thừa
+- Inheritance là quan hệ cấu trúc: lớp con kế thừa thuộc tính và phương thức từ lớp cha.
+- Polymorphism là hành vi động: cùng một lời gọi phương thức nhưng thực thi khác nhau tùy đối tượng.
+- Inheritance là nền tảng để có Polymorphism, nhưng hai khái niệm không đồng nhất:
+- Kế thừa nói về quan hệ “is-a” giữa các lớp.
+- Đa hình nói về cách các đối tượng phản ứng khác nhau với cùng một lời gọi phương thức.
+
+17/
+1. Class nào implements Comparable?
+- Lớp Media (hoặc lớp con nếu muốn quy tắc riêng).
+2. Cách viết compareTo()?
+- Override trong Media: so sánh theo title, nếu trùng thì theo cost.
+3. Có thể có nhiều quy tắc sắp xếp với Comparable không?
+- Không. Mỗi lớp chỉ có một quy tắc mặc định. Muốn nhiều quy tắc phải dùng Comparator.
+4. DVD có quy tắc khác (title → length giảm dần → cost) thì sao?
+- Override compareTo() riêng trong lớp DigitalVideoDisc để áp dụng quy tắc đó.
+
