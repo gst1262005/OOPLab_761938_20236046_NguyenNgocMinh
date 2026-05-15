@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public class Disc extends Media {
+public class Disc extends Media implements Playable {
     private int length;
     private String director;
 
@@ -12,4 +12,9 @@ public class Disc extends Media {
 
     public int getLength() { return length; }
     public String getDirector() { return director; }
+
+	@Override
+	public void play() {
+		 System.out.println("Playing Disc: " + getTitle());
+	}
 }

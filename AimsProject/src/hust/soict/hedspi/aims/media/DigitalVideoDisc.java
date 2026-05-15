@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc extends Media {
+public class DigitalVideoDisc extends Media implements Playable {
     private static int idCounter = 0; 
     private String director;
     private int length;
@@ -33,6 +33,25 @@ public class DigitalVideoDisc extends Media {
     public String toString() {
         return "DVD - " + getTitle() + " - " + getCategory() + " - "
                + director + " - " + length + ": " + getCost() + " $";
+    }
+    
+    @Override
+    public void play() {
+
+        // Kiểm tra length hợp lệ
+        if (getLength() <= 0) {
+
+            System.out.println("This DVD cannot be played.");
+
+            return;
+        }
+
+        // Thông tin play
+        System.out.println(
+                "Playing DVD: "
+                + getTitle()
+                + " - Length: "
+                + getLength());
     }
 
     public boolean isMatch(String title) {
