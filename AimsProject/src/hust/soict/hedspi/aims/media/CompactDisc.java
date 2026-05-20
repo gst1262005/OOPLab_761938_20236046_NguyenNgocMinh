@@ -41,13 +41,12 @@ public class CompactDisc extends Disc {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("CD - " + getTitle() + " - " + getCategory() + " - Artist: " + artist + " - Cost: " + getCost() + " $\n");
+        StringBuilder sb = new StringBuilder("CD - " + getTitle() + " - " + getCost() + "\n");
         for (Track track : tracks) {
-            sb.append(track.toString()).append("\n");
+            sb.append("   ").append(track.toString()).append("\n");
         }
         return sb.toString();
     }
-
     // Phương thức play
     public void play() {
         if (getLength() <= 0) {
